@@ -17,6 +17,7 @@ import {
 import { NavigationContainer } from '@react-navigation/native';
 import StackScreen from './src/navigation/StackScreen';
 
+
 declare const global: {HermesInternal: null | {}};
 
 const App = () => {
