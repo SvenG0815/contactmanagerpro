@@ -20,3 +20,8 @@ export type ProfileComponentProps = {
     route: RouteProp<RootStackParamList, 'Profile'>;
     navigation: StackNavigationProp<RootStackParamList, 'Profile'>;
 }
+
+export type HomeComponentProps = {
+  route: RouteProp<RootStackParamList, 'Home'>;
+  navigation: StackNavigationProp<RootStackParamList, 'Home'>;
+}

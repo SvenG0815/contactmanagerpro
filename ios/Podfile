@@ -10,6 +10,7 @@ target 'AwesomeTSProject' do
 
   target 'AwesomeTSProjectTests' do
     inherit! :complete
+    pod 'react-native-contacts', :path => '../node_modules/react-native-contacts'
     # Pods for testing
   end
 

@@ -5700,6 +5700,11 @@
   "resolved" "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz"
   "version" "16.13.1"
 
+"react-native-contacts@^6.0.4":
+  "integrity" "sha512-HFQHQAjWCag1cAKqybN7qMM0wjQzXlvRtS6jYOcEtSgbmvuE8iLYnWD1hi76MVBlvAYg8lnSGPOpECxUgsD9Pg=="
+  "resolved" "https://registry.npmjs.org/react-native-contacts/-/react-native-contacts-6.0.4.tgz"
+  "version" "6.0.4"
+
 "react-native-gesture-handler@^1.10.3", "react-native-gesture-handler@>= 1.0.0":
   "integrity" "sha512-cBGMi1IEsIVMgoox4RvMx7V2r6bNKw0uR1Mu1o7NbuHS6BRSVLq0dP34l2ecnPlC+jpWd3le6Yg1nrdCjby2Mw=="
   "resolved" "https://registry.npmjs.org/react-native-gesture-handler/-/react-native-gesture-handler-1.10.3.tgz"
