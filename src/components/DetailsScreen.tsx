@@ -3,10 +3,10 @@
 import React, {useState} from 'react';
 import { Text, View, Button, StyleSheet } from 'react-native';
 import {DetailsComponentProps} from '../navigation/types'
+import ContactDetailsHeader from './ContactDetailsHeader';
 
 
 const DetailsScreen = ({route, navigation} : DetailsComponentProps) => {
-  const [count, setCount] = React.useState<number>(0);
 
   React.useLayoutEffect(() => {
     navigation.setOptions({title: `${route.params.Contact.givenName} ${route.params.Contact.familyName}`});
@@ -14,7 +14,10 @@ const DetailsScreen = ({route, navigation} : DetailsComponentProps) => {
 
   return (
     <View style={styles.container}>
-      
+      <ContactDetailsHeader contact={route.params.Contact}/>
+      <View style={styles.body}>
+        <Text>Hello</Text>
+      </View>
     </View>
   );
 }
@@ -22,8 +25,12 @@ const DetailsScreen = ({route, navigation} : DetailsComponentProps) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center'
+    backgroundColor: '#2f363c',
+    //alignItems: 'center',
+    //justifyContent: 'center'
+  },
+  body: {
+    flex: 5
   }
 });
 
