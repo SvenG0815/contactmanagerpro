@@ -4,6 +4,7 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import { ParamListBase } from '@react-navigation/routers';
 import Contacts from 'react-native-contacts'
 import { HomeComponentProps } from '../navigation/types';
+import ContactRenderItem from './ContactListRenderItem';
 
 
 const HomeScreen: React.FC<HomeComponentProps> = (props) => {
@@ -26,16 +27,10 @@ const HomeScreen: React.FC<HomeComponentProps> = (props) => {
   }
 
   const renderContact= function({item}: {item: Contacts.Contact}){
-    return (
-      <View style={styles.renderItem}>
-        <Text style={styles.renderItemName}>
-          {item.givenName} {item.familyName}
-        </Text>
-        <Text style={styles.renderItemNumber}>{item.phoneNumbers.length != 0 ? item.phoneNumbers[0].number : "Missing Phone Number"}</Text>
-      </View>)
+    return <ContactRenderItem contact={item}/>;
   }
 
-  const filterContacts= function(contact: Contacts.Contact, searchTerm: string): boolean{
+  const filterContacts = function(contact: Contacts.Contact, searchTerm: string): boolean{
     let contactLowerCase = (contact.givenName + ' ' + contact.familyName).toLocaleLowerCase();
     let searchTermToLowerCase = searchTerm.toLowerCase();
     return contactLowerCase.indexOf(searchTermToLowerCase) > -1
@@ -68,12 +63,12 @@ const HomeScreen: React.FC<HomeComponentProps> = (props) => {
         <FlatList
           data={displayedContacts}
           renderItem={renderContact}
+          keyExtractor={(item, index) => index.toString()}
           ListEmptyComponent={() => {
             return <Text style={styles.listEmptyComponent}>No Contacts Found</Text>
           }}
         />
       </View>
-      
     </View>
   );
 }
@@ -103,19 +98,6 @@ const styles = StyleSheet.create({
   listEmptyComponent:{
     color: '#bad555'
   },
-  renderItem:{
-    minHeight: 70,
-    padding: 5
-  },
-  renderItemName:{
-    color: '#bada55',
-    fontWeight: 'bold',
-    fontSize: 26
-  },
-  renderItemNumber:{
-    color:'white',
-    fontWeight:'bold'
-  }
 });
 
 export default HomeScreen;
