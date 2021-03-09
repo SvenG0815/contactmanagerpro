@@ -1,3 +1,5 @@
+import Contacts from 'react-native-contacts'
+
 export interface DetailsScreenProps{
-    Name: string;
+    Contact: Contacts.Contact;
 }

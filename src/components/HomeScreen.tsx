@@ -27,7 +27,10 @@ const HomeScreen: React.FC<HomeComponentProps> = (props) => {
   }
 
   const renderContact= function({item}: {item: Contacts.Contact}){
-    return <ContactRenderItem contact={item}/>;
+    return <ContactRenderItem contact={item} onPressFunction={onPressContactRenderItem}/>;
+  }
+  const onPressContactRenderItem = function(item: Contacts.Contact){
+    props.navigation.push('Details', {Contact: item});
   }
 
   const filterContacts = function(contact: Contacts.Contact, searchTerm: string): boolean{
