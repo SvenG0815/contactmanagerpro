@@ -3,6 +3,7 @@ import { Button, StyleSheet, Text, View, } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {ContactNotesComponentProps} from '../navigation/types';
 import { FlatList } from 'react-native-gesture-handler';
+import NoteRenderItem from './NoteRenderItem'
 
 
 export interface Note{
@@ -59,8 +60,15 @@ const ContactNotes = ({route, navigation} : ContactNotesComponentProps) => {
         addNote(note);
     }
 
+    const deleteNote = async function(index: number){
+        let newNotes = notes;
+        newNotes.splice(index, 1);
+        await storeNotes(newNotes);
+        await loadNotes();
+    }
+
     const renderNoteListItem = function({item}: {item: Note}){
-        return (<View><Text>{item.title}</Text></View>);
+        return <NoteRenderItem note={item} index={notes.indexOf(item)} onPressFunction={deleteNote}/>
     }
 
 
