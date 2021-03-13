@@ -7,6 +7,8 @@ import ContactDetailsHeaderProperty from './ContactDetailsHeaderProperty';
 import ContactRenderItem from './ContactListRenderItem';
 import ContactPictures from './ContactPictures';
 import ContactNotes from './ContactNotes'
+import {ContactNotesComponentProps} from '../navigation/types';
+
 
 export interface Props{
     contactId: string;
@@ -19,7 +21,7 @@ const ContactDetailsBody: React.FC<Props> = (props) => {
         <View style={styles.container}>
             <Tab.Navigator>
                 <Tab.Screen name="Pictures" component={ContactPictures}/>
-                <Tab.Screen name="Notes" component={ContactNotes}/>
+                <Tab.Screen name="Notes" component={ContactNotes} initialParams={{contactId: props.contactId}}/>
             </Tab.Navigator>
         </View>
     );
