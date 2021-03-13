@@ -24,7 +24,6 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 import HomeScreen from '../components/HomeScreen';
 import DetailsScreen from '../components/DetailsScreen';
-import ProfileScreen from '../components/ProfileScreen';
 
 const Stack = createStackNavigator();
 
@@ -34,7 +33,7 @@ const StackScreen: React.FC = () => {
         initialRouteName="Home"
         screenOptions={{
             headerStyle: {
-                backgroundColor: '#f4511e'
+                backgroundColor: '#bad555'
             },
             headerTintColor: '#fff',
             headerTitleStyle: {
@@ -47,11 +46,6 @@ const StackScreen: React.FC = () => {
         component={HomeScreen} 
         options={{title: 'Overview'}}
       />
-      <Stack.Screen 
-        name="Profile" 
-        component={ProfileScreen} 
-        options={({ route }) => ({ title: route.name })}
-        />
       <Stack.Screen 
         name="Details" 
         component={DetailsScreen}

@@ -3,6 +3,7 @@
 import React, {useState} from 'react';
 import { Text, View, Button, StyleSheet } from 'react-native';
 import {DetailsComponentProps} from '../navigation/types'
+import ContactDetailsBody from './ContactDetailsBody';
 import ContactDetailsHeader from './ContactDetailsHeader';
 
 
@@ -16,7 +17,7 @@ const DetailsScreen = ({route, navigation} : DetailsComponentProps) => {
     <View style={styles.container}>
       <ContactDetailsHeader contact={route.params.Contact}/>
       <View style={styles.body}>
-        <Text>Hello</Text>
+        <ContactDetailsBody contactId={route.params.Contact.recordID}/>
       </View>
     </View>
   );

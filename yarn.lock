@@ -1129,6 +1129,13 @@
     "query-string" "^6.13.6"
     "react-is" "^16.13.0"
 
+"@react-navigation/material-top-tabs@^5.3.14":
+  "integrity" "sha512-Mrr/V8ZfbDKAnRreY1l6V6tzY/YKouI8YcMjZdlMl3lqPuZYBuXvk6/j60hXHTxfljHzw7CJKM3IgPcmNU9OHg=="
+  "resolved" "https://registry.npmjs.org/@react-navigation/material-top-tabs/-/material-top-tabs-5.3.14.tgz"
+  "version" "5.3.14"
+  dependencies:
+    "color" "^3.1.3"
+
 "@react-navigation/native@^5.0.5", "@react-navigation/native@^5.9.3":
   "integrity" "sha512-xaRlCDRVuFGxHsP/IetwLdNvLJwIJBYCUIx/ufWs6QkT9Q0EB0DtKzXCItuHydjMEVPd1Cy7lfjUlSM6hZ6Q3Q=="
   "resolved" "https://registry.npmjs.org/@react-navigation/native/-/native-5.9.3.tgz"
@@ -5705,7 +5712,7 @@
   "resolved" "https://registry.npmjs.org/react-native-contacts/-/react-native-contacts-6.0.4.tgz"
   "version" "6.0.4"
 
-"react-native-gesture-handler@^1.10.3", "react-native-gesture-handler@>= 1.0.0":
+"react-native-gesture-handler@*", "react-native-gesture-handler@^1.10.3", "react-native-gesture-handler@>= 1.0.0":
   "integrity" "sha512-cBGMi1IEsIVMgoox4RvMx7V2r6bNKw0uR1Mu1o7NbuHS6BRSVLq0dP34l2ecnPlC+jpWd3le6Yg1nrdCjby2Mw=="
   "resolved" "https://registry.npmjs.org/react-native-gesture-handler/-/react-native-gesture-handler-1.10.3.tgz"
   "version" "1.10.3"
@@ -5721,7 +5728,7 @@
   "resolved" "https://registry.npmjs.org/react-native-iphone-x-helper/-/react-native-iphone-x-helper-1.3.1.tgz"
   "version" "1.3.1"
 
-"react-native-reanimated@^1.13.2":
+"react-native-reanimated@*", "react-native-reanimated@^1.13.2", "react-native-reanimated@>= 1.0.0":
   "integrity" "sha512-O+WhgxSjOIzcVdAAvx+h2DY331Ek1knKlaq+jsNLpC1fhRy9XTdOObovgob/aF2ve9uJfPEawCx8381g/tUJZQ=="
   "resolved" "https://registry.npmjs.org/react-native-reanimated/-/react-native-reanimated-1.13.2.tgz"
   "version" "1.13.2"
@@ -5737,6 +5744,11 @@
   "integrity" "sha512-8+lCEsxzSu55GWRw6yZpyt3OszxN1OngfBsFXdqspaEfq6uIChanzlcD2PLVQl+iN82GAcrZM800Kd1pA477ZQ=="
   "resolved" "https://registry.npmjs.org/react-native-screens/-/react-native-screens-2.18.0.tgz"
   "version" "2.18.0"
+
+"react-native-tab-view@^2.16.0", "react-native-tab-view@>= 2.0.0":
+  "integrity" "sha512-ac2DmT7+l13wzIFqtbfXn4wwfgtPoKzWjjZyrK1t+T8sdemuUvD4zIt+UImg03fu3s3VD8Wh/fBrIdcqQyZJWg=="
+  "resolved" "https://registry.npmjs.org/react-native-tab-view/-/react-native-tab-view-2.16.0.tgz"
+  "version" "2.16.0"
 
 "react-native@*", "react-native@>=0.42.0", "react-native@>=0.57", "react-native@>=0.62.0-rc.0 <0.64.0", "react-native@0.63.4":
   "integrity" "sha512-I4kM8kYO2mWEYUFITMcpRulcy4/jd+j9T6PbIzR0FuMcz/xwd+JwHoLPa1HmCesvR1RDOw9o4D+OFLwuXXfmGw=="
