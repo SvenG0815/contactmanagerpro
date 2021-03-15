@@ -55,5 +55,7 @@
 	<false/>
 	<key>NSContactsUsageDescription</key>
 	<string>Contacts needed for awesome features</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Photos needed for awesome features</string>
 </dict>
 </plist>

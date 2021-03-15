@@ -5,12 +5,14 @@ import { HomeScreenProps } from './screenProps/HomeScreenProps';
 import { ProfileScreenProps } from './screenProps/ProfileScreenProps';
 import {DetailsScreenProps} from './screenProps/DetailsScreenProps'
 import { ContactNotesScreenProps } from './screenProps/ContactNotesScreenProps';
+import { ContactPhotosScreenProps } from './screenProps/ContactPhotosScreenProps';
 
 export type RootStackParamList = {
   Home: HomeScreenProps;
   Details: DetailsScreenProps;
   Profile: ProfileScreenProps;
   ContactNotes: ContactNotesScreenProps;
+  ContactPhotos: ContactPhotosScreenProps;
 };
 
 export type DetailsComponentProps = {
@@ -31,4 +33,9 @@ export type HomeComponentProps = {
 export type ContactNotesComponentProps = {
   route: RouteProp<RootStackParamList, 'ContactNotes'>;
   navigation: StackNavigationProp<RootStackParamList, 'ContactNotes'>;
+}
+
+export type ContactPhotosComponentProps = {
+  route: RouteProp<RootStackParamList, 'ContactPhotos'>;
+  navigation: StackNavigationProp<RootStackParamList, 'ContactPhotos'>;
 }
