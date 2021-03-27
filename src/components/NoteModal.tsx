@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Modal, Text, Pressable, StyleSheet, Alert } from 'react-native'
+import { View, Modal, Text, Pressable, StyleSheet, Alert, Button } from 'react-native'
 import { TextInput } from 'react-native-gesture-handler';
 import { not } from 'react-native-reanimated';
 import {Note} from './ContactNotes'
@@ -41,27 +41,34 @@ const NoteModal: React.FC<Props> = (props) => {
             >
                 <View style={styles.centeredView}>
                     <View style={styles.modalView}>
-                        <Text>Enter Note information</Text>
-                        <TextInput
-                            placeholder="Title"
-                            onChangeText={(text) => setTitle(text)}
-                        />
-                        <TextInput 
-                            placeholder="Body"
-                            onChangeText={text => setBody(text)}
-                        />
-                        <Pressable 
-                            style={[styles.button, styles.buttonClose]}
-                            onPress={closeModal}
-                        >
-                            <Text>Enter</Text>
-                        </Pressable>
-                        <Pressable 
-                            style={[styles.button, styles.buttonClose]}
-                            onPress={() => props.onCloseModal()}
-                        >
-                            <Text>Cancel</Text>
-                        </Pressable>
+                        <View style={styles.inputView}>
+                            <Text>Enter Note information</Text>
+                            <TextInput
+                                    placeholder="Title"
+                                    onChangeText={(text) => setTitle(text)}
+                                    style={styles.title}
+                            />
+                            <TextInput 
+                                placeholder="Body"
+                                onChangeText={text => setBody(text)}
+                                multiline={true}
+                                style={styles.body}
+                            />
+                        </View>
+                        <View style={styles.buttonView}>
+                            <View style={styles.button}>
+                                <Button 
+                                    onPress={() => props.onCloseModal()}
+                                    title="Close"
+                                />
+                            </View>
+                            <View style={styles.button}>
+                                <Button 
+                                    onPress={closeModal}
+                                    title="Enter"
+                                />
+                            </View>
+                        </View>
                     </View>
                 </View>        
         </Modal>
@@ -74,14 +81,15 @@ const styles = StyleSheet.create({
         flex:1,
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 22,
+        marginTop: 60,
     },
     modalView: {
-        margin: 20,
+        flex: 0.8,
+        margin: 40,
         backgroundColor: "white",
         borderRadius: 20,
         padding: 35,
-        alignItems: "center",
+        alignItems: 'flex-start',
         shadowColor: "#000",
         shadowOffset: {
           width: 0,
@@ -93,15 +101,26 @@ const styles = StyleSheet.create({
       },
       button: {
         borderRadius: 20,
-        padding: 10,
+        flex:1,
         elevation: 2
       },
-      buttonOpen: {
-        backgroundColor: "#F194FF",
+      inputView:{
+          flex:6,
       },
-      buttonClose: {
-        backgroundColor: "#2196F3",
+      title:{
+          flex:1,
+          fontWeight: 'bold',
       },
+      body:{
+          flex:6,
+      },
+      buttonView:{
+          flex:1,
+          flexDirection: 'row',
+          alignContent: 'flex-end',
+          justifyContent: 'flex-end',
+          padding: 10,
+      }
 })
 
 export default NoteModal;

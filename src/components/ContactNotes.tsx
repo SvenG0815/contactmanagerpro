@@ -75,12 +75,19 @@ const ContactNotes = ({route, navigation} : ContactNotesComponentProps) => {
     return (
         <View style={styles.container}>
             <NoteModal isVisible={isModalVisible} onCloseModal={onCloseModal}/>
-            <Button onPress={() => setIsModalVisible(!isModalVisible)} title="Add Note"/>
             <FlatList 
                 style={styles.noteList}
                 renderItem={renderNoteListItem}
                 data={notes}
                 keyExtractor={(item) => item.index}/>
+            <View style={styles.footer}>
+                <View style={styles.button}>
+                    <Button
+                        onPress={() => setIsModalVisible(!isModalVisible)}
+                        title={"Add"}
+                    />
+                </View>
+            </View>
         </View>
     );
 }
@@ -92,6 +99,15 @@ const styles = StyleSheet.create({
     noteList:{
         flex: 1,
     },
+    footer:{
+        flex:0.2,
+        flexDirection: 'row',
+        justifyContent: 'flex-end',
+    },
+    button:{
+        padding: 20,
+        marginRight: 20,
+    }
     
 })
 
