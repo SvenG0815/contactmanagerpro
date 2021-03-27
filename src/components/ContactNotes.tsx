@@ -1,9 +1,11 @@
 import React from 'react';
-import { Button, StyleSheet, Text, View, } from 'react-native';
+import { Button, StyleSheet, Text, View, Modal, Pressable, } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {ContactNotesComponentProps} from '../navigation/types';
 import { FlatList } from 'react-native-gesture-handler';
 import NoteRenderItem from './NoteRenderItem'
+import NoteModal from './NoteModal';
+import { not } from 'react-native-reanimated';
 
 
 export interface Note{
@@ -15,6 +17,7 @@ export interface Note{
 const ContactNotes = ({route, navigation} : ContactNotesComponentProps) => {
     const [notes, setNotes] = React.useState<Note[]>(new Array<Note>());
     const [isLoaded, setIsLoaded] = React.useState(false);
+    const [isModalVisible, setIsModalVisible] = React.useState(false);
 
     React.useEffect(() => {
         if(isLoaded == false){
@@ -51,13 +54,10 @@ const ContactNotes = ({route, navigation} : ContactNotesComponentProps) => {
         await loadNotes();
     }
 
-    const onAddNotePushed = function(){
-        const note: Note = {
-            title: "title",
-            body: "sample Body text.",
-            createdOn: new Date()
-        };
-        addNote(note);
+    const onCloseModal = async function(note?: Note) {
+        setIsModalVisible(!isModalVisible);
+        if(note != undefined)
+            await addNote(note);
     }
 
     const deleteNote = async function(index: number){
@@ -74,13 +74,13 @@ const ContactNotes = ({route, navigation} : ContactNotesComponentProps) => {
 
     return (
         <View style={styles.container}>
-            <Button onPress={onAddNotePushed} title="Add Note"/>
+            <NoteModal isVisible={isModalVisible} onCloseModal={onCloseModal}/>
+            <Button onPress={() => setIsModalVisible(!isModalVisible)} title="Add Note"/>
             <FlatList 
                 style={styles.noteList}
                 renderItem={renderNoteListItem}
                 data={notes}
                 keyExtractor={(item) => item.index}/>
-            <Text>{route.params.contactId}</Text>
         </View>
     );
 }
@@ -91,7 +91,8 @@ const styles = StyleSheet.create({
     },
     noteList:{
         flex: 1,
-    }
+    },
+    
 })
 
 export default ContactNotes;
