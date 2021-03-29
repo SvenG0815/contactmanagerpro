@@ -13,7 +13,7 @@ const NoteRenderItem: React.FC<Props> = (props) => {
         <View style={styles.container}>
             <View style={styles.title}>
                 <Text style={styles.titleText}>{props.note.title}</Text>
-                <Button title="remove" onPress={() => props.onPressFunction(props.index)}/> 
+                <Button title="Delete" onPress={() => props.onPressFunction(props.index)}/> 
             </View>
             <Text style={styles.body}>{props.note.body}</Text>
             <Text style={styles.footer}>{props.note.createdOn.toString()}</Text>

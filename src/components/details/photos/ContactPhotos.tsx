@@ -1,5 +1,5 @@
 import React from 'react'
-import { ContactNotesComponentProps } from '../navigation/types';
+import { ContactNotesComponentProps } from '../../../navigation/types';
 import { Alert, Button, FlatList, ListRenderItem, ListRenderItemInfo, StyleSheet, Text, View} from 'react-native';
 import CameraRoll, { PhotoIdentifier, SaveToCameraRollOptions } from '@react-native-community/cameraroll'
 import { TouchableOpacity } from 'react-native-gesture-handler';

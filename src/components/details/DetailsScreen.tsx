@@ -2,9 +2,9 @@
 
 import React, {useState} from 'react';
 import { Text, View, Button, StyleSheet } from 'react-native';
-import {DetailsComponentProps} from '../navigation/types'
+import {DetailsComponentProps} from '../../navigation/types'
 import ContactDetailsBody from './ContactDetailsBody';
-import ContactDetailsHeader from './ContactDetailsHeader';
+import ContactDetailsHeader from './header/ContactDetailsHeader';
 
 
 const DetailsScreen = ({route, navigation} : DetailsComponentProps) => {

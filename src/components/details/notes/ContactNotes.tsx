@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, StyleSheet, Text, View, Modal, Pressable, } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {ContactNotesComponentProps} from '../navigation/types';
+import {ContactNotesComponentProps} from '../../../navigation/types';
 import { FlatList } from 'react-native-gesture-handler';
 import NoteRenderItem from './NoteRenderItem'
 import NoteModal from './NoteModal';

@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { Text, View, Button, StyleSheet, Alert } from 'react-native';
-import {DetailsComponentProps} from '../navigation/types'
+import {DetailsComponentProps} from '../../navigation/types'
 import Contacts from 'react-native-contacts'
 import { TouchableOpacity } from 'react-native-gesture-handler';
 

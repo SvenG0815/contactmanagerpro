@@ -2,10 +2,10 @@
 
 import React, {useState} from 'react';
 import { Text, View, Button, StyleSheet } from 'react-native';
-import {DetailsComponentProps} from '../navigation/types'
+import {DetailsComponentProps} from '../../../navigation/types'
 import Contacts from 'react-native-contacts'
 import ContactDetailsHeaderProperty from './ContactDetailsHeaderProperty';
-import ContactRenderItem from './ContactListRenderItem';
+import ContactRenderItem from '../../home/ContactListRenderItem';
 
 export interface Props{
     contact: Contacts.Contact;

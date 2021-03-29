@@ -1,14 +1,14 @@
 import React, {useState} from 'react';
 import { Text, View, Button, StyleSheet } from 'react-native';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs'
-import {DetailsComponentProps} from '../navigation/types'
+import {DetailsComponentProps} from '../../navigation/types'
 import Contacts from 'react-native-contacts'
-import ContactDetailsHeaderProperty from './ContactDetailsHeaderProperty';
-import ContactRenderItem from './ContactListRenderItem';
-import ContactNotes from './ContactNotes'
-import {ContactNotesComponentProps} from '../navigation/types';
-import {ContactPhotosComponentProps} from '../navigation/types';
-import ContactPhotos from './ContactPhotos';
+import ContactDetailsHeaderProperty from './header/ContactDetailsHeaderProperty';
+import ContactRenderItem from '../home/ContactListRenderItem';
+import ContactNotes from './notes/ContactNotes'
+import {ContactNotesComponentProps} from '../../navigation/types';
+import {ContactPhotosComponentProps} from '../../navigation/types';
+import ContactPhotos from './photos/ContactPhotos';
 
 
 export interface Props{

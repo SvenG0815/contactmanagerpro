@@ -3,7 +3,7 @@ import { Text, View, Button, Alert, StyleSheet, TextInput, FlatList, ActivityInd
 import { StackNavigationProp } from '@react-navigation/stack';
 import { ParamListBase } from '@react-navigation/routers';
 import Contacts from 'react-native-contacts'
-import { HomeComponentProps } from '../navigation/types';
+import { HomeComponentProps } from '../../navigation/types';
 import ContactRenderItem from './ContactListRenderItem';
 
 

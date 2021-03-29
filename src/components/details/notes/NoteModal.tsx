@@ -27,7 +27,8 @@ const NoteModal: React.FC<Props> = (props) => {
             props.onCloseModal(note);
         }
         if(note == undefined)
-            alert("Please enter data");
+            console.log("Please enter data");
+            //alert("Please enter data");
     }
 
     return (
