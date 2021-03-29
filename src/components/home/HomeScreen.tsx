@@ -15,15 +15,14 @@ const HomeScreen: React.FC<HomeComponentProps> = (props) => {
 
   const loadContacts = function() {
     if(contacts.length == 0)
-      Contacts.getAll().then(onContactsLoaded);
+      Contacts.getAll().then(onContactsLoaded)
+                       .catch(err => console.log(err));
   }
 
   const onContactsLoaded = function(result : Contacts.Contact[]){
     setContacts(result);
     setDisplayedContacts(result);
     setIsLoading(false);
-    console.log("loaded " + contacts.length + " contacts");
-    console.log(JSON.stringify(result));
   }
 
   const renderContact= function({item}: {item: Contacts.Contact}){

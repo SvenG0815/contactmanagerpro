@@ -2,7 +2,6 @@
 import { RouteProp } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { HomeScreenProps } from './screenProps/HomeScreenProps';
-import { ProfileScreenProps } from './screenProps/ProfileScreenProps';
 import {DetailsScreenProps} from './screenProps/DetailsScreenProps'
 import { ContactNotesScreenProps } from './screenProps/ContactNotesScreenProps';
 import { ContactPhotosScreenProps } from './screenProps/ContactPhotosScreenProps';
@@ -10,7 +9,6 @@ import { ContactPhotosScreenProps } from './screenProps/ContactPhotosScreenProps
 export type RootStackParamList = {
   Home: HomeScreenProps;
   Details: DetailsScreenProps;
-  Profile: ProfileScreenProps;
   ContactNotes: ContactNotesScreenProps;
   ContactPhotos: ContactPhotosScreenProps;
 };
@@ -20,10 +18,6 @@ export type DetailsComponentProps = {
   navigation: StackNavigationProp<RootStackParamList, 'Details'>;
 };
 
-export type ProfileComponentProps = {
-    route: RouteProp<RootStackParamList, 'Profile'>;
-    navigation: StackNavigationProp<RootStackParamList, 'Profile'>;
-}
 
 export type HomeComponentProps = {
   route: RouteProp<RootStackParamList, 'Home'>;
